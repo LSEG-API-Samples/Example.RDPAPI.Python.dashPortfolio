@@ -61,8 +61,8 @@ def generate_headlines(instrum):
    #     print("Edate={}".format(edate_str))
         sdate_str = (datetime.date.today() - datetime.timedelta(days=3)).strftime("%Y-%m-%d")
     #    print("Sdate={}".format(sdate_str))
-        que = instrum + "&relevance=High"
-        headlines = rdp.get_news_headlines(query = instrum, 
+        headlines = rdp.get_news_headlines(query=instrum,
+     #   headlines = rdp.get_news_headlines(query={"query": instrum, "relevance":"High"},
             count = 200,
             date_from = sdate_str, 
             date_to = edate_str)
@@ -134,7 +134,7 @@ app = dash.Dash(__name__)
 app.layout = html.Div(style={'backgroundColor': colors['background'],'color': colors['text'] }, className="container", children=[
     html.Div(
         children=[
-            html.H1(children='EDP Demo Dashboard')
+            html.H1(children='Refinitiv Data Platform - Dash Portfolio Demo')
         ],
         style={'width':'100%', 'backgroundColor': colors['background'],'color': colors['text'], 'textAlign':'center'}
     ),
